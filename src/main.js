@@ -1,11 +1,12 @@
 import { createApp, h } from 'vue';
-import { Home, Register } from './pages';
+import { Home, Register, Spots } from './pages';
 
 const NotFoundComponent = { template: '<p>Page not found</p>' };
 
 const routes = {
   '/': Home,
-  '/register': Register
+  '/register': Register,
+  '/spots': Spots
 };
 
 const SimpleRouter = {
