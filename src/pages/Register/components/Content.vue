@@ -1,16 +1,16 @@
 <template>
   <div style="margin: auto">
-    <h2>What would you like to do</h2>
+    <h2>Register your card ID</h2>
     <div class="container">
-      <div class="item">View Parking Spots</div>
-      <div class="item">Register RFID Card</div>
+      <input />
+      <button>Register</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "SelectionStep",
+  name: "Content",
 };
 </script>
 

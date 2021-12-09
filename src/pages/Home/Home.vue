@@ -1,17 +1,17 @@
 <template>
   <Header />
-  <SelectionStep name="kostas" msg="Welcome to Your Vue.js App" />
+  <Content />
   <Footer />
 </template>
 <script>
-import SelectionStep from "./components/SelectionStep.vue";
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
+import Content from "./components/Content.vue";
+import Header from "../../components/Header.vue";
+import Footer from "../../components/Footer.vue";
 
 export default {
-  name: "App",
+  name: "Home",
   components: {
-    SelectionStep,
+    Content,
     Header,
     Footer,
   },
