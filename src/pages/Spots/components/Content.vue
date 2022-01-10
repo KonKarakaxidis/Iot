@@ -23,7 +23,6 @@ export default {
     const baseURL = "http://localhost:3000";
     const res = await fetch(`${baseURL}/api/v1/spots`, {
       method: "GET",
-      mode: "cors",
     });
 
     const data = await res.json();
