@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <h1>Coded by Haris Economidis</h1>
+    <h1>Coded by HarrisOik</h1>
   </footer>
 </template>
 
