@@ -2,8 +2,10 @@
   <div style="margin: auto">
     <h2>Parking Spots</h2>
     <div class="container">
-      <div class="item" v-for="option in options" :key="option.id">
-        {{ option.id }}, {{ option.label }}, {{ option.timestamp }}
+      <div class="item" v-for="datum in data" :key="datum._id">
+        <div>{{ datum.name }}</div>
+        <div v-if="datum.status" style="color: red">Taken</div>
+        <div v-else style="color: green">Free</div>
       </div>
     </div>
   </div>
@@ -14,15 +16,29 @@ export default {
   name: "Content",
   data() {
     return {
-      options: [
-        { label: "spot1", id: "155dsd", timestamp: "0000000" },
-        { label: "spot1" },
-        { label: "spot1" },
-        { label: "spot1" },
-        { label: "spot1" },
-        { label: "spot1" },
-      ],
+      data: null,
     };
+  },
+  async mounted() {
+    const baseURL = "http://localhost:3000";
+    const res = await fetch(`${baseURL}/api/v1/spots`, {
+      method: "GET",
+      mode: "cors",
+    });
+
+    const data = await res.json();
+
+    function compare(a, b) {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    }
+
+    this.data = data.spots.sort(compare);
   },
 };
 </script>
