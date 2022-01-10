@@ -2,8 +2,13 @@
   <div style="margin: auto">
     <h2>What would you like to do</h2>
     <div class="container">
-      <div class="item">View Parking Spots</div>
-      <div class="item">Register RFID Card</div>
+      <a href="spots">
+        <div class="item">View Parking Spots</div>
+      </a>
+
+      <a href="register">
+        <div class="item">Register RFID Card</div>
+      </a>
     </div>
   </div>
 </template>
@@ -16,6 +21,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+a {
+  color: #2c3e50;
+  text-decoration: none;
+}
 .container {
   display: flex;
   gap: 1rem;
